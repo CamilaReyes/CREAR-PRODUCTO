@@ -1,0 +1,24 @@
+<h2>REGISTRO DE PRODUCTOS</h2>
+
+<form #productoFormulario="ngForm" (ngSubmit)="FormularioUp()">
+<!--#productoFormulario="ngForm" indicamos que el formulario con este ID es un formulario Angular 
+(ngSubmit)="FormularioUp()" indica la accion/funcion que va a ejecutar cuando se envie el formulario -->
+<label> Nombre: </label> <br>
+<input id="nombre" name="nombre" type="text" placeholder="Ingrese el nombre del producto" required #nombre="ngModel" [(ngModel)]="Producto.nombre"> 
+<br>
+
+<!-- #nombre="ngModel" siginifica que este Input es un input Angular
+ [{ngModel}]="Producto.nombre" significa que el valor ingresado en el  input sera guardado en el Modelo especificamente en el campo nombre-->
+ <label> Marca: </label> <br>
+ <input id="marca" name="marca" type="text" placeholder="Ingrese la marca del producto" required #marca="ngModel" [(ngModel)]="Producto.marca">
+ <br>
+ <label> Precio: </label> <br>
+ <input id="precio" name="precio" type="number" placeholder="Ingrese el precio del producto" required #precio="ngModel" [(ngModel)]="Producto.precio">
+ <br>
+ <label> Unidades: </label> <br>
+ <input id="unidades" name="unidades" type="number" placeholder="Ingrese las unidades del producto" required #unidades="ngModel" [(ngModel)]="Producto.unidades">
+
+<br>
+<br>
+ <button type="submit">Guardar</button>
+</form>
